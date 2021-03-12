@@ -12,4 +12,8 @@ export class AppComponent {
   password = '1234';
   repeatPasword = '1234';
   favoriteColor = 'Green';
+
+  onChange(property: string, event: Event) {
+    this[property] = (<HTMLInputElement>event.target).value;
+  }
 }

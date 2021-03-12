@@ -4,27 +4,32 @@
       <form>
         <div class="form-group">
           <label for="name">Name</label>
-          <input type="text" class="form-control" placeholder="Name" [value]="name">
+          <input type="text" class="form-control" placeholder="Name" [value]="name" (input)="onChange('name', $event)">
         </div>
         <div class="form-group">
           <label for="name">Last name</label>
-          <input type="text" class="form-control" placeholder="Last name" [value]="lastName">
+          <input type="text" class="form-control" placeholder="Last name" [value]="lastName"
+            (input)="onChange('lastName', $event)">
         </div>
         <div class="form-group">
           <label for="name">Username</label>
-          <input type="text" class="form-control" placeholder="Username" [value]="username">
+          <input type="text" class="form-control" placeholder="Username" [value]="username"
+            (input)="onChange('username', $event)">
         </div>
         <div class="form-group">
           <label for="name">Password</label>
-          <input type="password" class="form-control" placeholder="1234" [value]="password">
+          <input type="password" class="form-control" placeholder="1234" [value]="password"
+            (input)="onChange('password', $event)">
         </div>
         <div class="form-group">
           <label for="name">Confirm password</label>
-          <input type="password" class="form-control" placeholder="1234" [value]="repeatPasword">
+          <input type="password" class="form-control" placeholder="1234" [value]="repeatPasword"
+            (input)="onChange('repeatPasword', $event)">
         </div>
         <div class="form-group">
           <label for="name">Favorite color</label>
-          <input type="text" class="form-control" placeholder="Green" [value]="favoriteColor">
+          <input type="text" class="form-control" placeholder="Green" [value]="favoriteColor"
+            (input)="onChange('favoriteColor', $event)">
         </div>
       </form>
     </div>
