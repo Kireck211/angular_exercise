@@ -4,32 +4,28 @@
       <form>
         <div class="form-group">
           <label for="name">Name</label>
-          <input type="text" class="form-control" placeholder="Name" [value]="name" (input)="onChange('name', $event)">
+          <input type="text" class="form-control" placeholder="Name" [(ngModel)]="name" name="name">
         </div>
         <div class="form-group">
           <label for="name">Last name</label>
-          <input type="text" class="form-control" placeholder="Last name" [value]="lastName"
-            (input)="onChange('lastName', $event)">
+          <input type="text" class="form-control" placeholder="Last name" [(ngModel)]="lastName" name="lastName">
         </div>
         <div class="form-group">
           <label for="name">Username</label>
-          <input type="text" class="form-control" placeholder="Username" [value]="username"
-            (input)="onChange('username', $event)">
+          <input type="text" class="form-control" placeholder="Username" [(ngModel)]="username" name="username">
         </div>
         <div class="form-group">
           <label for="name">Password</label>
-          <input type="password" class="form-control" placeholder="1234" [value]="password"
-            (input)="onChange('password', $event)">
+          <input type="password" class="form-control" placeholder="1234" [(ngModel)]="password" name="password">
         </div>
         <div class="form-group">
           <label for="name">Confirm password</label>
-          <input type="password" class="form-control" placeholder="1234" [value]="repeatPasword"
-            (input)="onChange('repeatPasword', $event)">
+          <input type="password" class="form-control" placeholder="1234" [(ngModel)]="repeatPasword"
+            name="repeatPasword">
         </div>
         <div class="form-group">
           <label for="name">Favorite color</label>
-          <input type="text" class="form-control" placeholder="Green" [value]="favoriteColor"
-            (input)="onChange('favoriteColor', $event)">
+          <input type="text" class="form-control" placeholder="Green" [(ngModel)]="favoriteColor" name="favoriteColor">
         </div>
       </form>
     </div>
