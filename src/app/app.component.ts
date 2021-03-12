@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.less']
 })
 export class AppComponent {
-  title = 'users';
+  name = 'Eruck';
+  lastName = 'De Santiago';
+  username = 'kireck';
+  password = '1234';
+  repeatPasword = '1234';
+  favoriteColor = 'Green';
 }
