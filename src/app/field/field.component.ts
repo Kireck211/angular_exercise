@@ -8,6 +8,9 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 export class FieldComponent implements OnInit {
   @Input() value = 'default';
   @Input() label = 'default';
+  @Input() name = 'default';
+  @Input() isFilled = false;
+  @Output() isFilledChange = new EventEmitter<string>();
   @Input() type: 'text' | 'password' = 'text';
   @Output() valueChange = new EventEmitter<string>();
 
@@ -17,6 +20,8 @@ export class FieldComponent implements OnInit {
   }
 
   onValueChanged(event: Event) {
-    this.valueChange.emit((<HTMLInputElement>event.target).value);
+    const { value } = (<HTMLInputElement>event.target);
+    this.valueChange.emit(value);
+    this.isFilledChange.emit(this.name);
   }
 }

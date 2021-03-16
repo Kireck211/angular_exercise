@@ -1,24 +1,27 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12">
+      <div class="alert alert-warning" *ngIf="!matchingPasswords">
+        Passwords does not match :(
+      </div>
       <form>
-        <app-field [(value)]="name" [label]="'Name'"></app-field>
-        <app-field [(value)]="lastName" [label]="'Last Name'"></app-field>
-        <app-field [(value)]="username" [label]="'username'"></app-field>
-        <app-field [(value)]="password" [label]="'password'" [type]="'password'"></app-field>
-        <app-field [(value)]="repeatPasword" [label]="'Confirm password'" [type]="'password'"></app-field>
-        <app-field [(value)]="favoriteColor" [label]="'favoriteColor'"></app-field>
+        <app-field *ngFor="let key of attributesKeys;" [(value)]="attributes[key].value" [label]="attributes[key].label"
+          [(isFilled)]="attributes[key].isFilled" (isFilledChange)="onInputChange($event)" [name]="key">
+        </app-field>
+
+        <button type="button" class="btn btn-primary" [disabled]="!allFilled"
+          [title]="!allFilled ? 'Please fill all the fields': ''">Submit</button>
       </form>
     </div>
   </div>
   <div class="row">
     <div class="col-xs-12">
-      <p>Name: {{name}}</p>
-      <p>Last name: {{lastName}}</p>
-      <p>Username: {{username}}</p>
-      <p>Password: {{password}}</p>
-      <p>Confirm password: {{repeatPasword}}</p>
-      <p>Favorite color: {{favoriteColor}}</p>
+      <p>Name: {{attributes.name.value}}</p>
+      <p>Last name: {{attributes.lastName.value}}</p>
+      <p>Username: {{attributes.username.value}}</p>
+      <p>Password: {{attributes.password.value}}</p>
+      <p>Confirm password: {{attributes.repeatPassword.value}}</p>
+      <p>Favorite color: {{attributes.favoriteColor.value}}</p>
     </div>
   </div>
 </div>
