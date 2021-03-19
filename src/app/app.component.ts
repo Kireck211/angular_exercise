@@ -10,8 +10,8 @@ export class AppComponent implements AfterContentInit {
     name: { value: 'Erick', isFilled: false, label: 'Name' },
     lastName: { value: 'De Santiago', isFilled: false, label: 'Last Name' },
     username: { value: 'kireck', isFilled: false, label: 'Username' },
-    password: { value: '1234', isFilled: false, label: 'Password' },
-    repeatPassword: { value: '1234', isFilled: false, label: 'Confirm password' },
+    password: { value: '1234', isFilled: false, label: 'Password', type: 'password' },
+    repeatPassword: { value: '1234', isFilled: false, label: 'Confirm password', type: 'password' },
     favoriteColor: { value: 'green', isFilled: false, label: 'Favorite Color' }
   }
   attributesKeys = Object.keys(this.attributes);

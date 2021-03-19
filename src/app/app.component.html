@@ -6,7 +6,8 @@
       </div>
       <form>
         <app-field *ngFor="let key of attributesKeys;" [(value)]="attributes[key].value" [label]="attributes[key].label"
-          [(isFilled)]="attributes[key].isFilled" (isFilledChange)="onInputChange($event)" [name]="key">
+          [(isFilled)]="attributes[key].isFilled" (isFilledChange)="onInputChange($event)" [name]="key"
+          [type]="attributes[key].type">
         </app-field>
 
         <button type="button" class="btn btn-primary" [disabled]="!allFilled"

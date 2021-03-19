@@ -6,10 +6,10 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   styleUrls: ['./field.component.less']
 })
 export class FieldComponent implements OnInit {
-  @Input() value = 'default';
+  @Input() value: string = 'default';
   @Input() label = 'default';
   @Input() name = 'default';
-  @Input() isFilled = false;
+  @Input() isFilled: boolean = false;
   @Output() isFilledChange = new EventEmitter<string>();
   @Input() type: 'text' | 'password' = 'text';
   @Output() valueChange = new EventEmitter<string>();
