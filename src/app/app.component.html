@@ -11,7 +11,8 @@
         </app-field>
 
         <button type="button" class="btn btn-primary" [disabled]="!allFilled"
-          [title]="!allFilled ? 'Please fill all the fields': ''">Submit</button>
+          [title]="!allFilled ? 'Please fill all the fields': ''" (click)="addNewUser()">Submit</button>
+        <button type="button" (click)="printUsers()" class="btn btn-success">Print users from Service</button>
       </form>
     </div>
   </div>
@@ -23,6 +24,21 @@
       <p>Password: {{attributes.password.value}}</p>
       <p>Confirm password: {{attributes.repeatPassword.value}}</p>
       <p>Favorite color: {{attributes.favoriteColor.value}}</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="panel panel-default" *ngFor="let user of users; let i = index;" (click)="fillForm(i)">
+        <div class="panel-heading">
+          <h3 class="panel-title">{{user.name}} {{user.lastName}}</h3>
+        </div>
+        <div class="panel-body">
+          <ul>
+            <li>{{user.username}}</li>
+            <li>{{user.favoriteColor}}</li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 </div>
