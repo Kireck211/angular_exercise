@@ -1,4 +1,5 @@
 import { Component, AfterContentInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http'
 
 import { UserService } from './shared/user.service';
 import { User } from './models/user';
@@ -23,7 +24,7 @@ export class AppComponent implements AfterContentInit {
   allFilled: boolean;
   users: User[] = [];
 
-  constructor(private userService: UserService) {
+  constructor(private userService: UserService, private http: HttpClient) {
 
   }
 
@@ -51,7 +52,7 @@ export class AppComponent implements AfterContentInit {
   }
 
   printUsers() {
-    console.log(this.userService.users)
+    this.http.get('http://localhost:3000/api/users').subscribe((response) => console.log(response));
   }
 
   getAttribute(key) {
